@@ -58,23 +58,23 @@ export function OffersSection() {
                 </div>
               )}
 
-              <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between">
+              <div className="p-5 sm:p-7 flex-1 flex flex-col justify-between">
                 <div>
                   {/* Title & Description */}
                   <div className="space-y-2">
-                    <h3 className="font-heading text-xl font-medium text-[var(--color-text)] group-hover:text-[var(--color-primary)] transition-colors">
+                    <h3 className="font-heading text-lg sm:text-xl font-medium text-[var(--color-text)] group-hover:text-[var(--color-primary)] transition-colors">
                       {offer.title}
                     </h3>
                     <p className="text-xs text-[var(--color-primary)] font-medium">
                       {offer.subtitle}
                     </p>
-                    <p className="text-xs sm:text-sm text-[var(--color-text-muted)] leading-relaxed pt-1">
+                    <p className="text-xs sm:text-sm text-[var(--color-text-muted)] line-clamp-3 leading-relaxed pt-1">
                       {offer.description}
                     </p>
                   </div>
 
               {/* Included steps list */}
-              <div className="py-5 my-5 border-y border-[var(--color-border)] space-y-2">
+              <div className="py-4 sm:py-5 my-4 sm:my-5 border-y border-[var(--color-border)] space-y-2">
                 <span className="text-[10px] uppercase tracking-wider font-semibold text-[var(--color-text)] block">
                   Package Inclusions:
                 </span>
@@ -89,14 +89,14 @@ export function OffersSection() {
               </div>
 
                 {/* Price & Action */}
-                <div className="pt-2 flex items-center justify-between gap-4">
+                <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                   <div>
                     {offer.originalPrice && (
                       <span className="text-xs text-[var(--color-text-muted)] line-through block">
                         {formatCurrency(offer.originalPrice)}
                       </span>
                     )}
-                    <span className="text-2xl font-bold text-[var(--color-primary)]">
+                    <span className="text-xl sm:text-2xl font-bold text-[var(--color-primary)]">
                       {formatCurrency(offer.offerPrice)}
                     </span>
                   </div>
@@ -106,6 +106,7 @@ export function OffersSection() {
                     variant="gold"
                     size="sm"
                     icon={<ArrowRight className="w-3.5 h-3.5" />}
+                    className="w-full sm:w-auto"
                   >
                     Book Package
                   </Button>
@@ -116,9 +117,10 @@ export function OffersSection() {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <Button href="/offers" variant="outline" icon={<ArrowRight className="w-4 h-4" />}>
-            View All Packages & Seasonal Privileges
+        <div className="mt-10 sm:mt-12 text-center">
+          <Button href="/offers" variant="outline" icon={<ArrowRight className="w-4 h-4" />} className="w-full sm:w-auto">
+            <span className="sm:hidden">View All Packages</span>
+            <span className="hidden sm:inline">View All Packages & Seasonal Privileges</span>
           </Button>
         </div>
       </Container>

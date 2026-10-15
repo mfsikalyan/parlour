@@ -33,7 +33,8 @@ export function TechnologyPreview() {
             icon={<ArrowRight className="w-4 h-4" />}
             className="shrink-0 w-full sm:w-auto"
           >
-            Explore All 8 Technologies
+            <span className="sm:hidden">Explore 8 Technologies</span>
+            <span className="hidden sm:inline">Explore All 8 Technologies</span>
           </Button>
         </div>
 
@@ -67,7 +68,7 @@ export function TechnologyPreview() {
                 </div>
               </div>
 
-              <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-4">
                 <div className="space-y-2">
                   <h3 className="font-heading text-lg font-medium text-[var(--color-text)] group-hover:text-[var(--color-primary)] transition-colors">
                     {tech.name}

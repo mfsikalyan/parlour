@@ -48,7 +48,7 @@ export function ServiceCategoryFilter({
 
       {/* Category Pills - Smooth horizontal swipe on mobile, wrapped on larger screens */}
       <div
-        className="flex items-center sm:justify-center overflow-x-auto no-scrollbar scroll-smooth gap-2 pt-2 px-2 -mx-2 sm:mx-0 sm:flex-wrap pb-1"
+        className="w-full max-w-full flex items-center sm:justify-center overflow-x-auto no-scrollbar scroll-smooth overscroll-x-contain gap-2 pt-2 px-1 sm:flex-wrap pb-1"
         role="tablist"
         aria-label="Service categories"
       >

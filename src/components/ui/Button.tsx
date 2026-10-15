@@ -45,7 +45,7 @@ export function Button({
   }[variant];
 
   const baseClasses =
-    "inline-flex items-center justify-center gap-2 rounded-[var(--border-radius,8px)] transition-all duration-200 cursor-pointer select-none outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none active:scale-[0.98]";
+    "inline-flex items-center justify-center gap-2 rounded-[var(--border-radius,8px)] transition-all duration-200 cursor-pointer select-none outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none active:scale-[0.98] max-w-full text-center";
 
   const combinedClasses = `${baseClasses} ${sizeClasses} ${variantClasses} ${className}`;
 
@@ -53,7 +53,7 @@ export function Button({
     <>
       {isLoading && (
         <svg
-          className="animate-spin -ml-1 mr-2 h-4 w-4 text-current"
+          className="animate-spin -ml-1 mr-2 h-4 w-4 text-current shrink-0"
           fill="none"
           viewBox="0 0 24 24"
         >
@@ -73,7 +73,7 @@ export function Button({
         </svg>
       )}
       {!isLoading && icon && iconPosition === "left" && <span className="inline-flex shrink-0">{icon}</span>}
-      <span>{children}</span>
+      <span className="break-words leading-tight">{children}</span>
       {!isLoading && icon && iconPosition === "right" && <span className="inline-flex shrink-0">{icon}</span>}
     </>
   );

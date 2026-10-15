@@ -44,16 +44,16 @@ export function Testimonials() {
               </div>
 
               {/* Attribution */}
-              <div className="pt-6 mt-6 border-t border-[var(--color-border)] flex items-center justify-between">
+              <div className="pt-4 sm:pt-6 mt-4 sm:mt-6 border-t border-[var(--color-border)] flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <div>
-                  <h4 className="font-heading text-base font-semibold text-[var(--color-text)]">
+                  <h4 className="font-heading text-sm sm:text-base font-semibold text-[var(--color-text)]">
                     {item.clientName}
                   </h4>
                   <span className="text-xs text-[var(--color-text-muted)] block">
                     {item.locality}
                   </span>
                 </div>
-                <div className="text-right">
+                <div className="sm:text-right">
                   <span className="text-[11px] text-[var(--color-primary)] font-medium block">
                     {item.serviceAvailed}
                   </span>

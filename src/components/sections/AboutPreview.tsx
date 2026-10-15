@@ -30,7 +30,7 @@ export function AboutPreview() {
               />
             </div>
             {/* Overlapping Floating Inset Card */}
-            <div className="absolute -bottom-8 -right-4 sm:-right-8 w-64 p-5 rounded-[var(--border-radius,8px)] bg-[var(--color-surface-elevated)] border border-[var(--color-border)] shadow-2xl hidden sm:block">
+            <div className="absolute -bottom-8 right-2 sm:right-4 w-64 p-5 rounded-[var(--border-radius,8px)] bg-[var(--color-surface-elevated)] border border-[var(--color-border)] shadow-2xl hidden sm:block">
               <span className="font-heading text-3xl font-bold text-[var(--color-primary)]">
                 {new Date().getFullYear() - brandConfig.foundedYear}+ Years
               </span>
@@ -64,7 +64,7 @@ export function AboutPreview() {
             </ul>
 
             <div className="pt-4 flex items-center gap-4">
-              <Button href="/about" variant="primary" icon={<ArrowRight className="w-4 h-4" />}>
+              <Button href="/about" variant="primary" icon={<ArrowRight className="w-4 h-4" />} className="w-full sm:w-auto">
                 Read Our Story & Standards
               </Button>
             </div>

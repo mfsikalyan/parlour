@@ -59,7 +59,7 @@ export function FAQDirectoryView({ faqs }: FAQDirectoryViewProps) {
 
       {/* Category Filter Pills - Horizontally swipeable on mobile */}
       <div
-        className="flex items-center sm:justify-center overflow-x-auto no-scrollbar sm:flex-wrap gap-2 pb-2 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0"
+        className="w-full max-w-full flex items-center sm:justify-center overflow-x-auto no-scrollbar overscroll-x-contain sm:flex-wrap gap-2 pb-2 sm:pb-0 px-1"
         role="tablist"
         aria-label="FAQ categories"
       >

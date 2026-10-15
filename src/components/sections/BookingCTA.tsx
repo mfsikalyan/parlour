@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/Button";
 
 export function BookingCTA() {
   return (
-    <section className="py-12 sm:py-16 lg:py-24 bg-gradient-to-b from-[var(--color-surface,#14161b)] to-[var(--color-background)] border-t border-[var(--color-border)] relative overflow-hidden">
+    <section className="py-12 sm:py-16 lg:py-24 bg-gradient-to-b from-[var(--color-surface,#14161b)] to-[var(--color-background)] border-t border-[var(--color-border)] relative overflow-hidden overflow-x-clip">
       {/* Subtle Glow Backdrop */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 sm:w-96 h-72 sm:h-96 bg-[var(--color-primary)]/10 rounded-full blur-3xl pointer-events-none" />
 

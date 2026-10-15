@@ -29,7 +29,7 @@ export function TechnologyView() {
     <div>
       {/* Category Filter Pills */}
       <div
-        className="flex items-center sm:justify-center overflow-x-auto no-scrollbar scroll-smooth gap-2 pb-2 px-1 -mx-2 sm:mx-0 sm:flex-wrap mb-8 sm:mb-12"
+        className="w-full max-w-full flex items-center sm:justify-center overflow-x-auto no-scrollbar scroll-smooth overscroll-x-contain gap-2 pb-2 px-1 sm:flex-wrap mb-8 sm:mb-12"
         role="tablist"
         aria-label="Salon Technology Categories"
       >

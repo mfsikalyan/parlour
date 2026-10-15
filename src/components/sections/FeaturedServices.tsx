@@ -19,20 +19,22 @@ export function FeaturedServices() {
           subtitle="Precision cuts, hand-painted balayage, medical-grade facials, and men's executive grooming delivered by dedicated specialists."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
           {featured.map((service) => (
             <ServiceCard key={service.slug} service={service} />
           ))}
         </div>
 
-        <div className="mt-14 text-center">
+        <div className="mt-10 sm:mt-14 text-center">
           <Button
             href="/services"
             variant="outline"
             size="lg"
             icon={<ArrowRight className="w-4 h-4" />}
+            className="w-full sm:w-auto"
           >
-            Explore Complete Service & Treatment Menu
+            <span className="sm:hidden">Explore Complete Menu</span>
+            <span className="hidden sm:inline">Explore Complete Service & Treatment Menu</span>
           </Button>
         </div>
       </Container>

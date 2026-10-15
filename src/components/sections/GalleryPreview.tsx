@@ -53,9 +53,10 @@ export function GalleryPreview() {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <Button href="/gallery" variant="outline" icon={<ArrowRight className="w-4 h-4" />}>
-            View Full Portfolio & Interactive Lightbox
+        <div className="mt-10 sm:mt-12 text-center">
+          <Button href="/gallery" variant="outline" icon={<ArrowRight className="w-4 h-4" />} className="w-full sm:w-auto">
+            <span className="sm:hidden">View Full Portfolio</span>
+            <span className="hidden sm:inline">View Full Portfolio & Interactive Lightbox</span>
           </Button>
         </div>
       </Container>

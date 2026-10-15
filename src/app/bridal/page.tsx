@@ -321,7 +321,7 @@ export default function BridalPage() {
               </div>
 
               {/* Inset Overlapping Photo: Western White Gown & Veil Bride */}
-              <div className="absolute -bottom-6 -left-6 sm:-left-10 w-44 sm:w-56 aspect-[3/4] rounded-[var(--border-radius,8px)] overflow-hidden shadow-2xl border-2 border-[var(--color-primary)] hidden sm:block group">
+              <div className="absolute -bottom-6 left-2 sm:left-4 w-44 sm:w-56 aspect-[3/4] rounded-[var(--border-radius,8px)] overflow-hidden shadow-2xl border-2 border-[var(--color-primary)] hidden sm:block group">
                 <Image
                   src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80"
                   alt="Western international bride in ethereal lace veil and dewy makeup"
@@ -339,7 +339,7 @@ export default function BridalPage() {
               </div>
 
               {/* Floating Quality Badge */}
-              <div className="absolute top-4 -right-2 sm:-right-4 px-3 py-2 rounded-lg bg-[var(--color-surface,#14161b)]/95 backdrop-blur-md border border-[var(--color-primary)] shadow-xl flex items-center gap-2">
+              <div className="absolute top-4 right-3 sm:right-4 px-3 py-2 rounded-lg bg-[var(--color-surface,#14161b)]/95 backdrop-blur-md border border-[var(--color-primary)] shadow-xl flex items-center gap-2">
                 <Sparkles className="w-4 h-4 text-[var(--color-primary)]" />
                 <span className="text-[11px] font-semibold text-[var(--color-text)]">
                   Couture Certified

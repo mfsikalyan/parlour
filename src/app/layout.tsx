@@ -98,10 +98,10 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-[var(--color-background)] text-[var(--color-text)] pb-[calc(4.5rem+env(safe-area-inset-bottom,0px))] lg:pb-0">
+      <body className="min-h-screen flex flex-col bg-[var(--color-background)] text-[var(--color-text)] pb-[calc(4.5rem+env(safe-area-inset-bottom,0px))] lg:pb-0 w-full max-w-full overflow-x-clip relative">
         <AnnouncementBar />
         <SiteHeader />
-        <main id="main-content" className="flex-1">
+        <main id="main-content" className="flex-1 w-full min-w-0 max-w-full overflow-x-clip">
           {children}
         </main>
         <SiteFooter />

@@ -82,8 +82,8 @@ export function TeamPreview() {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <Button href="/team" variant="outline" icon={<ArrowRight className="w-4 h-4" />}>
+        <div className="mt-10 sm:mt-12 text-center">
+          <Button href="/team" variant="outline" icon={<ArrowRight className="w-4 h-4" />} className="w-full sm:w-auto">
             Meet All Stylists & Bios
           </Button>
         </div>
