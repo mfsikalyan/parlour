@@ -35,15 +35,20 @@ export function MobileNavigation({
 }: MobileNavigationProps) {
   const pathname = usePathname();
   const drawerRef = useRef<HTMLDivElement>(null);
+  const prevPathnameRef = useRef(pathname);
 
-  // Close menu when route changes
+  // Close menu only when route actually changes (navigation occurred)
   useEffect(() => {
-    onClose();
+    if (prevPathnameRef.current !== pathname) {
+      prevPathnameRef.current = pathname;
+      onClose();
+    }
   }, [pathname, onClose]);
 
   // Lock body scroll and listen for Escape key
   useEffect(() => {
     if (isOpen) {
+      const originalOverflow = document.body.style.overflow;
       document.body.style.overflow = "hidden";
       const handleKeyDown = (e: KeyboardEvent) => {
         if (e.key === "Escape") {
@@ -52,11 +57,9 @@ export function MobileNavigation({
       };
       window.addEventListener("keydown", handleKeyDown);
       return () => {
-        document.body.style.overflow = "unset";
+        document.body.style.overflow = originalOverflow;
         window.removeEventListener("keydown", handleKeyDown);
       };
-    } else {
-      document.body.style.overflow = "unset";
     }
   }, [isOpen, onClose]);
 
@@ -69,8 +72,10 @@ export function MobileNavigation({
 
   return (
     <div
-      className={`fixed inset-0 z-50 lg:hidden transition-all duration-300 ${
-        isOpen ? "pointer-events-auto" : "pointer-events-none delay-200"
+      className={`fixed inset-0 z-[60] lg:hidden overflow-hidden transition-all duration-300 ${
+        isOpen
+          ? "opacity-100 pointer-events-auto visible"
+          : "opacity-0 pointer-events-none invisible"
       }`}
       role="dialog"
       aria-modal="true"
@@ -104,8 +109,9 @@ export function MobileNavigation({
               </span>
             </Link>
             <button
+              type="button"
               onClick={onClose}
-              className="p-2.5 rounded-full text-[var(--color-text-muted)] hover:text-[var(--color-text)] hover:bg-[var(--color-surface-subtle)] border border-[var(--color-border)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]"
+              className="p-2.5 rounded-full text-[var(--color-text-muted)] hover:text-[var(--color-text)] hover:bg-[var(--color-surface-subtle)] border border-[var(--color-border)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] cursor-pointer active:scale-95 transition-all"
               aria-label="Close navigation menu"
             >
               <X className="w-5 h-5" />

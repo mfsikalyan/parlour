@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, Phone, Sparkles } from "lucide-react";
@@ -13,6 +13,14 @@ export function SiteHeader() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const pathname = usePathname();
   const navItems = getHeaderNav();
+
+  const handleCloseMenu = useCallback(() => {
+    setMobileMenuOpen(false);
+  }, []);
+
+  const handleToggleMenu = useCallback(() => {
+    setMobileMenuOpen((prev) => !prev);
+  }, []);
 
   return (
     <>
@@ -108,9 +116,10 @@ export function SiteHeader() {
             </Button>
 
             <button
-              onClick={() => setMobileMenuOpen(true)}
-              className="min-w-[42px] min-h-[42px] p-2 flex items-center justify-center rounded-lg text-[var(--color-text-muted)] hover:text-[var(--color-text)] hover:bg-[var(--color-surface-subtle)] border border-[var(--color-border)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] active:scale-95 transition-all shrink-0"
-              aria-label="Open mobile menu"
+              type="button"
+              onClick={handleToggleMenu}
+              className="min-w-[42px] min-h-[42px] p-2 flex items-center justify-center rounded-lg text-[var(--color-text-muted)] hover:text-[var(--color-text)] hover:bg-[var(--color-surface-subtle)] border border-[var(--color-border)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] active:scale-95 transition-all shrink-0 cursor-pointer"
+              aria-label={mobileMenuOpen ? "Close mobile menu" : "Open mobile menu"}
               aria-expanded={mobileMenuOpen}
             >
               <Menu className="w-5 h-5" />
@@ -122,7 +131,7 @@ export function SiteHeader() {
       {/* Accessible Mobile Menu Component */}
       <MobileNavigation
         isOpen={mobileMenuOpen}
-        onClose={() => setMobileMenuOpen(false)}
+        onClose={handleCloseMenu}
         navItems={navItems}
       />
     </>
