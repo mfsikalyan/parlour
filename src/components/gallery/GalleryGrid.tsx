@@ -22,7 +22,7 @@ export function GalleryGrid({ initialItems }: GalleryGridProps) {
     <div>
       {/* Category Filter Pills */}
       <div
-        className="flex items-center justify-center flex-wrap gap-2 mb-10"
+        className="flex items-center sm:justify-center overflow-x-auto no-scrollbar scroll-smooth gap-2 pb-2 px-1 -mx-2 sm:mx-0 sm:flex-wrap mb-8 sm:mb-10"
         role="tablist"
         aria-label="Portfolio categories"
       >
@@ -34,10 +34,10 @@ export function GalleryGrid({ initialItems }: GalleryGridProps) {
               role="tab"
               aria-selected={isActive}
               onClick={() => setSelectedCategory(cat.id)}
-              className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wider transition-all cursor-pointer border ${
+              className={`px-3.5 sm:px-4 py-2 rounded-full text-xs font-semibold tracking-wider transition-all cursor-pointer border whitespace-nowrap shrink-0 ${
                 isActive
                   ? "bg-[var(--color-primary)] text-[var(--color-primary-foreground)] border-[var(--color-primary)] shadow-sm"
-                  : "bg-[var(--color-surface,#14161b)] text-[var(--color-text-muted)] hover:text-[var(--color-text)] border-[var(--color-border)] hover:border-[var(--color-border-strong)]"
+                  : "bg-[var(--color-surface,#14161b)] text-[var(--color-text-muted)] hover:text-[var(--color-text)] border border-[var(--color-border)] hover:border-[var(--color-border-strong)]"
               }`}
             >
               {cat.label}

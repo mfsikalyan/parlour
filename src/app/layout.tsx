@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Cinzel, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { brandConfig } from "@/config/brand";
@@ -21,6 +21,14 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ["latin"],
   display: "swap",
 });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  viewportFit: "cover",
+  themeColor: "#0c0d10",
+};
 
 export const metadata: Metadata = {
   metadataBase: new URL(brandConfig.seo.siteUrl),
@@ -90,7 +98,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-[var(--color-background)] text-[var(--color-text)] pb-20 lg:pb-0">
+      <body className="min-h-screen flex flex-col bg-[var(--color-background)] text-[var(--color-text)] pb-[calc(4.5rem+env(safe-area-inset-bottom,0px))] lg:pb-0">
         <AnnouncementBar />
         <SiteHeader />
         <main id="main-content" className="flex-1">

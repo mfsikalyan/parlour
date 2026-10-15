@@ -27,21 +27,21 @@ export default function TechnologyPage() {
             </span>
           </div>
 
-          <h1 className="font-heading text-3xl sm:text-5xl lg:text-6xl font-normal text-[var(--color-text)] tracking-tight leading-[1.1] text-balance">
+          <h1 className="font-heading text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-normal text-[var(--color-text)] tracking-tight leading-[1.15] sm:leading-[1.1] text-balance px-1">
             State-Of-The-Art Salon & Aesthetic Technologies
           </h1>
 
-          <p className="text-sm sm:text-base text-[var(--color-text-muted)] max-w-2xl mx-auto leading-relaxed text-balance">
+          <p className="text-xs sm:text-base text-[var(--color-text-muted)] max-w-2xl mx-auto leading-relaxed text-balance px-2">
             We believe true beauty artistry must be grounded in clinical science. From 200x trichology follicle diagnostics and Japanese halo hydrotherapy to hospital-grade autoclave sterilization, explore the advanced technologies that elevate every Aura Luxe ritual.
           </p>
 
           {/* Quick Metrics Bar */}
-          <div className="pt-6 border-t border-[var(--color-border)] grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-3xl mx-auto text-center">
-            <div>
-              <span className="font-heading text-2xl sm:text-3xl font-bold text-[var(--color-primary)] block">
+          <div className="pt-5 sm:pt-6 border-t border-[var(--color-border)] grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-6 max-w-3xl mx-auto text-center px-1">
+            <div className="p-2 sm:p-0">
+              <span className="font-heading text-xl sm:text-3xl font-bold text-[var(--color-primary)] block">
                 200x
               </span>
-              <span className="text-[11px] uppercase tracking-wider text-[var(--color-text-muted)] block mt-1">
+              <span className="text-[10px] sm:text-[11px] uppercase tracking-wider text-[var(--color-text-muted)] block mt-0.5 sm:mt-1">
                 Micro-Camera Trichology
               </span>
             </div>
@@ -73,24 +73,25 @@ export default function TechnologyPage() {
         </section>
 
         {/* Main Interactive Technology Directory */}
-        <section className="my-16">
+        <section className="my-10 sm:my-16">
           <TechnologyView />
         </section>
 
         {/* Bottom Booking CTA Banner */}
-        <section className="my-16 p-8 sm:p-12 rounded-[var(--border-radius,8px)] bg-gradient-to-r from-[var(--color-surface,#14161b)] via-[var(--color-surface-elevated,#1c1f26)] to-[var(--color-surface,#14161b)] border border-[var(--color-primary)] text-center max-w-4xl mx-auto shadow-2xl">
-          <Sparkles className="w-8 h-8 text-[var(--color-primary)] mx-auto mb-4" />
-          <h2 className="font-heading text-2xl sm:text-4xl font-normal text-[var(--color-text)]">
+        <section className="my-10 sm:my-16 p-6 sm:p-12 rounded-[var(--border-radius,8px)] bg-gradient-to-r from-[var(--color-surface,#14161b)] via-[var(--color-surface-elevated,#1c1f26)] to-[var(--color-surface,#14161b)] border border-[var(--color-primary)] text-center max-w-4xl mx-auto shadow-2xl">
+          <Sparkles className="w-6 h-6 sm:w-8 sm:h-8 text-[var(--color-primary)] mx-auto mb-3 sm:mb-4" />
+          <h2 className="font-heading text-xl sm:text-3xl lg:text-4xl font-normal text-[var(--color-text)]">
             Experience Technology-Powered Hair & Skin Rituals
           </h2>
-          <p className="mt-3 text-sm text-[var(--color-text-muted)] max-w-xl mx-auto leading-relaxed">
+          <p className="mt-2.5 sm:mt-3 text-xs sm:text-sm text-[var(--color-text-muted)] max-w-xl mx-auto leading-relaxed">
             Begin with a complimentary trichology scalp diagnostic or clinical vortex facial consultation. Experience the Aura Luxe difference.
           </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+          <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 w-full">
             <Button
               href="/book"
               variant="gold"
               size="lg"
+              className="w-full sm:w-auto"
               icon={<Calendar className="w-4 h-4" />}
             >
               Book an Appointment
@@ -99,6 +100,7 @@ export default function TechnologyPage() {
               href="/services"
               variant="outline"
               size="lg"
+              className="w-full sm:w-auto"
               icon={<ArrowRight className="w-4 h-4" />}
             >
               Explore Treatment Menu

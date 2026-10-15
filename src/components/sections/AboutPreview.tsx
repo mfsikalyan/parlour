@@ -15,9 +15,9 @@ export function AboutPreview() {
   ];
 
   return (
-    <section className="py-20 lg:py-28 bg-[var(--color-surface,#14161b)] border-y border-[var(--color-border)]">
+    <section className="py-12 sm:py-16 lg:py-24 bg-[var(--color-surface,#14161b)] border-y border-[var(--color-border)]">
       <Container>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
           {/* Images Duo Composition */}
           <div className="relative">
             <div className="relative aspect-[4/5] rounded-[var(--border-radius,8px)] overflow-hidden shadow-2xl border border-[var(--color-border)]">
@@ -41,11 +41,11 @@ export function AboutPreview() {
           </div>
 
           {/* Text Content */}
-          <div className="space-y-6">
-            <span className="text-xs uppercase tracking-[0.25em] font-semibold text-[var(--color-primary)] px-3 py-1 rounded-full bg-[var(--color-badge-bg)] border border-[var(--color-border)] inline-block">
+          <div className="space-y-4 sm:space-y-6">
+            <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.25em] font-semibold text-[var(--color-primary)] px-3 py-1 rounded-full bg-[var(--color-badge-bg)] border border-[var(--color-border)] inline-block">
               The Aura Philosophy
             </span>
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-normal text-[var(--color-text)] leading-tight">
+            <h2 className="font-heading text-2xl sm:text-4xl lg:text-5xl font-normal text-[var(--color-text)] leading-tight">
               A Modern Sanctuary for Rejuvenation & Confidence
             </h2>
             <p className="text-sm sm:text-base text-[var(--color-text-muted)] leading-relaxed">

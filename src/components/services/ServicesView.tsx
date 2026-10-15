@@ -27,7 +27,7 @@ export function ServicesView({ allServices }: ServicesViewProps) {
   });
 
   return (
-    <Container className="py-12 sm:py-16">
+    <Container className="py-8 sm:py-12 lg:py-16">
       <ServiceCategoryFilter
         activeCategory={activeCategory}
         onSelectCategory={setActiveCategory}
@@ -36,7 +36,7 @@ export function ServicesView({ allServices }: ServicesViewProps) {
       />
 
       {filteredServices.length === 0 ? (
-        <div className="text-center py-20 bg-[var(--color-surface,#14161b)] rounded-[var(--border-radius,8px)] border border-[var(--color-border)] p-8">
+        <div className="text-center py-16 sm:py-20 bg-[var(--color-surface,#14161b)] rounded-[var(--border-radius,8px)] border border-[var(--color-border)] p-6 sm:p-8">
           <p className="text-base text-[var(--color-text)] font-medium">
             No treatments found matching &ldquo;{searchQuery}&rdquo;
           </p>
@@ -54,7 +54,7 @@ export function ServicesView({ allServices }: ServicesViewProps) {
           </button>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
           {filteredServices.map((service) => (
             <ServiceCard key={service.slug} service={service} />
           ))}

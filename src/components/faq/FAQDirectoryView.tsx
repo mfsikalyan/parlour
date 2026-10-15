@@ -57,9 +57,9 @@ export function FAQDirectoryView({ faqs }: FAQDirectoryViewProps) {
         )}
       </div>
 
-      {/* Category Filter Pills */}
+      {/* Category Filter Pills - Horizontally swipeable on mobile */}
       <div
-        className="flex items-center justify-center flex-wrap gap-2"
+        className="flex items-center sm:justify-center overflow-x-auto no-scrollbar sm:flex-wrap gap-2 pb-2 sm:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0"
         role="tablist"
         aria-label="FAQ categories"
       >
@@ -71,7 +71,7 @@ export function FAQDirectoryView({ faqs }: FAQDirectoryViewProps) {
               role="tab"
               aria-selected={isActive}
               onClick={() => setActiveCategory(cat.id)}
-              className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wider transition-all cursor-pointer border ${
+              className={`px-3.5 sm:px-4 py-2 rounded-full text-xs font-semibold tracking-wider transition-all cursor-pointer border whitespace-nowrap shrink-0 ${
                 isActive
                   ? "bg-[var(--color-primary)] text-[var(--color-primary-foreground)] border-[var(--color-primary)] shadow-sm"
                   : "bg-[var(--color-surface,#14161b)] text-[var(--color-text-muted)] hover:text-[var(--color-text)] border-[var(--color-border)] hover:border-[var(--color-border-strong)]"
@@ -85,7 +85,7 @@ export function FAQDirectoryView({ faqs }: FAQDirectoryViewProps) {
 
       {/* Questions Accordion */}
       {filteredFaqs.length === 0 ? (
-        <div className="text-center py-16 bg-[var(--color-surface,#14161b)] rounded-[var(--border-radius,8px)] border border-[var(--color-border)] p-6">
+        <div className="text-center py-12 sm:py-16 bg-[var(--color-surface,#14161b)] rounded-[var(--border-radius,8px)] border border-[var(--color-border)] p-6">
           <p className="text-sm text-[var(--color-text)] font-medium">
             No questions found matching &ldquo;{searchQuery}&rdquo;
           </p>
@@ -100,7 +100,7 @@ export function FAQDirectoryView({ faqs }: FAQDirectoryViewProps) {
           </button>
         </div>
       ) : (
-        <div className="space-y-4">
+        <div className="space-y-3 sm:space-y-4">
           {filteredFaqs.map((faq) => {
             const isOpen = Boolean(openIds[faq.id]);
             return (
@@ -113,11 +113,11 @@ export function FAQDirectoryView({ faqs }: FAQDirectoryViewProps) {
                   onClick={() => toggleFAQ(faq.id)}
                   aria-expanded={isOpen}
                   aria-controls={`faq-dir-answer-${faq.id}`}
-                  className="w-full text-left p-5 sm:p-6 flex items-center justify-between gap-4 font-heading text-base sm:text-lg font-medium text-[var(--color-text)] hover:text-[var(--color-primary)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]"
+                  className="w-full text-left p-4 sm:p-6 flex items-center justify-between gap-3 font-heading text-sm sm:text-lg font-medium text-[var(--color-text)] hover:text-[var(--color-primary)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]"
                 >
-                  <span>{faq.question}</span>
+                  <span className="leading-snug">{faq.question}</span>
                   <ChevronDown
-                    className={`w-5 h-5 text-[var(--color-primary)] shrink-0 transition-transform duration-200 ${
+                    className={`w-4 h-4 sm:w-5 sm:h-5 text-[var(--color-primary)] shrink-0 transition-transform duration-200 ${
                       isOpen ? "rotate-180" : ""
                     }`}
                   />
@@ -127,7 +127,7 @@ export function FAQDirectoryView({ faqs }: FAQDirectoryViewProps) {
                   <div
                     id={`faq-dir-answer-${faq.id}`}
                     role="region"
-                    className="px-5 pb-6 sm:px-6 text-xs sm:text-sm text-[var(--color-text-muted)] leading-relaxed border-t border-[var(--color-border)] pt-4"
+                    className="px-4 pb-5 sm:px-6 sm:pb-6 text-xs sm:text-sm text-[var(--color-text-muted)] leading-relaxed border-t border-[var(--color-border)] pt-3 sm:pt-4"
                   >
                     {faq.answer}
                   </div>

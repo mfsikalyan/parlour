@@ -18,15 +18,15 @@ export function SiteFooter() {
   return (
     <footer
       role="contentinfo"
-      className="bg-[var(--color-surface,#14161b)] text-[var(--color-text)] border-t border-[var(--color-border)] pt-16 pb-12 transition-colors duration-200"
+      className="bg-[var(--color-surface,#14161b)] text-[var(--color-text)] border-t border-[var(--color-border)] pt-10 sm:pt-16 pb-8 sm:pb-12 transition-colors duration-200"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Top Section: Brand + Navigation columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10 pb-14 border-b border-[var(--color-border)]">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 sm:gap-10 pb-10 sm:pb-14 border-b border-[var(--color-border)]">
           {/* Brand & Positioning Column (Span 2) */}
-          <div className="lg:col-span-2 space-y-4">
+          <div className="col-span-2 sm:col-span-3 lg:col-span-2 space-y-4">
             <Link href="/" className="inline-block">
-              <span className="font-heading text-2xl font-bold tracking-wider text-[var(--color-text)]">
+              <span className="font-heading text-xl sm:text-2xl font-bold tracking-wider text-[var(--color-text)]">
                 {brandConfig.name}
               </span>
               <p className="text-xs uppercase tracking-[0.2em] text-[var(--color-primary)] font-medium mt-1">
@@ -34,7 +34,7 @@ export function SiteFooter() {
               </p>
             </Link>
 
-            <p className="text-sm text-[var(--color-text-muted)] leading-relaxed max-w-sm">
+            <p className="text-xs sm:text-sm text-[var(--color-text-muted)] leading-relaxed max-w-sm">
               {brandConfig.positioning}
             </p>
 
@@ -83,15 +83,15 @@ export function SiteFooter() {
           {/* Dynamic Navigation Groups (Span 4) */}
           {footerGroups.map((group) => (
             <div key={group.title} className="space-y-3">
-              <h3 className="font-heading text-sm font-semibold tracking-wider uppercase text-[var(--color-text)]">
+              <h3 className="font-heading text-xs sm:text-sm font-semibold tracking-wider uppercase text-[var(--color-text)]">
                 {group.title}
               </h3>
-              <ul className="space-y-2 text-sm">
+              <ul className="space-y-2 text-xs sm:text-sm">
                 {group.items.map((item) => (
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors inline-flex items-center gap-1 group"
+                      className="text-[var(--color-text-muted)] hover:text-[var(--color-primary)] transition-colors inline-flex items-center gap-1 group py-0.5"
                     >
                       <span>{item.label}</span>
                       <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -104,7 +104,7 @@ export function SiteFooter() {
         </div>
 
         {/* Middle Section: Salon Hours & Branch Locations */}
-        <div className="py-10 grid grid-cols-1 md:grid-cols-3 gap-8 border-b border-[var(--color-border)] text-sm">
+        <div className="py-8 sm:py-10 grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 border-b border-[var(--color-border)] text-sm">
           {/* Flagship Branch */}
           <div className="space-y-2">
             <h4 className="font-semibold text-[var(--color-text)] flex items-center gap-2">

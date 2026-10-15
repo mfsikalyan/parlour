@@ -114,22 +114,22 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             </div>
 
             {/* Narrative Overview */}
-            <div className="p-6 sm:p-8 rounded-[var(--border-radius,8px)] bg-[var(--color-surface,#14161b)] border border-[var(--color-border)] space-y-4">
-              <h2 className="font-heading text-xl sm:text-2xl font-medium text-[var(--color-text)]">
+            <div className="p-5 sm:p-8 rounded-[var(--border-radius,8px)] bg-[var(--color-surface,#14161b)] border border-[var(--color-border)] space-y-3 sm:space-y-4">
+              <h2 className="font-heading text-lg sm:text-2xl font-medium text-[var(--color-text)]">
                 The Treatment Experience
               </h2>
-              <p className="text-sm sm:text-base text-[var(--color-text-muted)] leading-relaxed">
+              <p className="text-xs sm:text-base text-[var(--color-text-muted)] leading-relaxed">
                 {service.fullDescription}
               </p>
             </div>
 
             {/* Included Steps Checklist */}
-            <div className="p-6 sm:p-8 rounded-[var(--border-radius,8px)] bg-[var(--color-surface,#14161b)] border border-[var(--color-border)] space-y-4">
-              <h3 className="font-heading text-lg font-semibold text-[var(--color-text)] flex items-center gap-2">
+            <div className="p-5 sm:p-8 rounded-[var(--border-radius,8px)] bg-[var(--color-surface,#14161b)] border border-[var(--color-border)] space-y-4">
+              <h3 className="font-heading text-base sm:text-lg font-semibold text-[var(--color-text)] flex items-center gap-2">
                 <Check className="w-5 h-5 text-[var(--color-primary)]" />
                 <span>What Is Included in This Session</span>
               </h3>
-              <ul className="space-y-3 pt-2 text-sm text-[var(--color-text)]">
+              <ul className="space-y-3 pt-2 text-xs sm:text-sm text-[var(--color-text)]">
                 {service.includedSteps.map((step, idx) => (
                   <li key={idx} className="flex items-start gap-3">
                     <div className="w-5 h-5 rounded-full bg-[var(--color-badge-bg)] text-[var(--color-primary)] flex items-center justify-center shrink-0 mt-0.5 text-xs font-bold">
@@ -143,8 +143,8 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
             {/* Add-ons Section (if any) */}
             {service.addOns && service.addOns.length > 0 && (
-              <div className="p-6 sm:p-8 rounded-[var(--border-radius,8px)] bg-[var(--color-surface,#14161b)] border border-[var(--color-border)] space-y-4">
-                <h3 className="font-heading text-lg font-semibold text-[var(--color-text)] flex items-center gap-2">
+              <div className="p-5 sm:p-8 rounded-[var(--border-radius,8px)] bg-[var(--color-surface,#14161b)] border border-[var(--color-border)] space-y-4">
+                <h3 className="font-heading text-base sm:text-lg font-semibold text-[var(--color-text)] flex items-center gap-2">
                   <PlusCircle className="w-5 h-5 text-[var(--color-primary)]" />
                   <span>Enhance Your Treatment (Optional Add-ons)</span>
                 </h3>
@@ -152,15 +152,15 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
                   {service.addOns.map((addon, idx) => (
                     <div
                       key={idx}
-                      className="p-4 rounded-md bg-[var(--color-surface-subtle)] border border-[var(--color-border)] flex flex-col justify-between"
+                      className="p-3.5 sm:p-4 rounded-md bg-[var(--color-surface-subtle)] border border-[var(--color-border)] flex flex-col justify-between"
                     >
                       <div>
-                        <h4 className="text-sm font-semibold text-[var(--color-text)]">{addon.title}</h4>
-                        <span className="text-xs text-[var(--color-text-muted)] block mt-0.5">
+                        <h4 className="text-xs sm:text-sm font-semibold text-[var(--color-text)]">{addon.title}</h4>
+                        <span className="text-[11px] sm:text-xs text-[var(--color-text-muted)] block mt-0.5">
                           +{addon.durationMinutes} minutes
                         </span>
                       </div>
-                      <span className="text-sm font-bold text-[var(--color-primary)] mt-3">
+                      <span className="text-xs sm:text-sm font-bold text-[var(--color-primary)] mt-3">
                         +{formatCurrency(addon.price)}
                       </span>
                     </div>
@@ -170,10 +170,10 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
             )}
 
             {/* Preparation & Aftercare Accordions/Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
               {service.prepNotes && (
-                <div className="p-6 rounded-[var(--border-radius,8px)] bg-[var(--color-surface,#14161b)] border border-[var(--color-border)] space-y-2">
-                  <h4 className="font-heading text-base font-semibold text-[var(--color-text)] flex items-center gap-2">
+                <div className="p-5 sm:p-6 rounded-[var(--border-radius,8px)] bg-[var(--color-surface,#14161b)] border border-[var(--color-border)] space-y-2">
+                  <h4 className="font-heading text-sm sm:text-base font-semibold text-[var(--color-text)] flex items-center gap-2">
                     <AlertCircle className="w-4 h-4 text-amber-400" />
                     <span>Preparation Notes</span>
                   </h4>
@@ -189,8 +189,8 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               )}
 
               {service.aftercareNotes && (
-                <div className="p-6 rounded-[var(--border-radius,8px)] bg-[var(--color-surface,#14161b)] border border-[var(--color-border)] space-y-2">
-                  <h4 className="font-heading text-base font-semibold text-[var(--color-text)] flex items-center gap-2">
+                <div className="p-5 sm:p-6 rounded-[var(--border-radius,8px)] bg-[var(--color-surface,#14161b)] border border-[var(--color-border)] space-y-2">
+                  <h4 className="font-heading text-sm sm:text-base font-semibold text-[var(--color-text)] flex items-center gap-2">
                     <ShieldCheck className="w-4 h-4 text-emerald-400" />
                     <span>Aftercare & Longevity</span>
                   </h4>
@@ -209,13 +209,13 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
 
           {/* Sticky Booking Sidebar (Col 5) */}
           <aside className="lg:col-span-5 lg:sticky lg:top-28 space-y-6">
-            <div className="p-6 sm:p-8 rounded-[var(--border-radius,8px)] bg-[var(--color-surface,#14161b)] border border-[var(--color-border)] shadow-xl space-y-6">
+            <div className="p-5 sm:p-8 rounded-[var(--border-radius,8px)] bg-[var(--color-surface,#14161b)] border border-[var(--color-border)] shadow-xl space-y-5 sm:space-y-6">
               <div>
-                <span className="text-xs uppercase font-semibold text-[var(--color-primary)] tracking-widest block mb-1">
+                <span className="text-[10px] sm:text-xs uppercase font-semibold text-[var(--color-primary)] tracking-widest block mb-1">
                   Treatment Investment
                 </span>
                 <div className="flex items-baseline gap-2">
-                  <span className="font-heading text-3xl sm:text-4xl font-bold text-[var(--color-primary)]">
+                  <span className="font-heading text-2xl sm:text-4xl font-bold text-[var(--color-primary)]">
                     {priceDisplay}
                   </span>
                 </div>
@@ -267,7 +267,7 @@ export default async function ServiceDetailPage({ params }: ServicePageProps) {
               </div>
 
               {/* Hygiene Guarantee */}
-              <div className="p-3.5 rounded bg-[var(--color-surface-subtle)] border border-[var(--color-border)] text-xs text-[var(--color-text-muted)] space-y-1">
+              <div className="p-3 sm:p-3.5 rounded bg-[var(--color-surface-subtle)] border border-[var(--color-border)] text-xs text-[var(--color-text-muted)] space-y-1">
                 <div className="flex items-center gap-1.5 font-semibold text-[var(--color-text)]">
                   <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
                   <span>The Aura Promise</span>

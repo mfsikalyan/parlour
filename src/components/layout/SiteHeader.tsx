@@ -28,16 +28,16 @@ export function SiteHeader() {
         role="banner"
         className="sticky top-0 z-40 w-full bg-[var(--color-background)]/90 backdrop-blur-md border-b border-[var(--color-border)] transition-colors duration-200"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between gap-3 xl:gap-6 flex-nowrap">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-2 sm:gap-3 xl:gap-6 flex-nowrap">
           {/* Logo & Brand Identity */}
           <Link
             href="/"
-            className="flex flex-col group py-1 select-none outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 rounded shrink-0"
+            className="flex flex-col group py-1 select-none outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] focus-visible:ring-offset-2 rounded shrink-0 min-w-0"
           >
-            <span className="font-heading text-xl sm:text-2xl font-bold tracking-[0.08em] text-[var(--color-text)] group-hover:text-[var(--color-primary)] transition-colors">
+            <span className="font-heading text-lg sm:text-2xl font-bold tracking-[0.06em] sm:tracking-[0.08em] text-[var(--color-text)] group-hover:text-[var(--color-primary)] transition-colors">
               {brandConfig.shortName}
             </span>
-            <span className="text-[10px] tracking-[0.22em] uppercase text-[var(--color-primary)] font-medium">
+            <span className="text-[9px] sm:text-[10px] tracking-[0.16em] sm:tracking-[0.22em] uppercase text-[var(--color-primary)] font-medium truncate max-w-[160px] sm:max-w-none">
               {brandConfig.tagline}
             </span>
           </Link>
@@ -97,19 +97,19 @@ export function SiteHeader() {
           </div>
 
           {/* Mobile menu hamburger button */}
-          <div className="flex items-center gap-2 lg:hidden">
+          <div className="flex items-center gap-1.5 sm:gap-2 lg:hidden">
             <Button
               href="/book"
-              variant="primary"
+              variant="gold"
               size="sm"
-              className="sm:hidden text-xs px-2.5 py-1.5"
+              className="sm:hidden text-xs px-3 py-1.5 font-bold shadow-sm"
             >
               Book
             </Button>
 
             <button
               onClick={() => setMobileMenuOpen(true)}
-              className="p-2.5 rounded-lg text-[var(--color-text-muted)] hover:text-[var(--color-text)] hover:bg-[var(--color-surface-subtle)] border border-[var(--color-border)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)]"
+              className="min-w-[42px] min-h-[42px] p-2 flex items-center justify-center rounded-lg text-[var(--color-text-muted)] hover:text-[var(--color-text)] hover:bg-[var(--color-surface-subtle)] border border-[var(--color-border)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--color-primary)] active:scale-95 transition-all"
               aria-label="Open mobile menu"
               aria-expanded={mobileMenuOpen}
             >

@@ -7,7 +7,7 @@ import { Container } from "@/components/ui/Container";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[85vh] lg:min-h-[90vh] flex items-center justify-center overflow-hidden bg-[var(--color-background)]">
+    <section className="relative min-h-[75vh] sm:min-h-[85vh] lg:min-h-[90vh] flex items-center justify-center overflow-hidden bg-[var(--color-background)]">
       {/* Background Hero Imagery with Gradient Veil */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -22,20 +22,20 @@ export function HeroSection() {
         <div className="absolute inset-0 bg-radial from-transparent via-[var(--color-background)]/40 to-[var(--color-background)]" />
       </div>
 
-      <Container className="relative z-10 py-12 sm:py-20 lg:py-28 text-center flex flex-col items-center">
+      <Container className="relative z-10 py-10 sm:py-16 lg:py-24 text-center flex flex-col items-center">
         {/* Eyebrow Pill */}
-        <div className="inline-flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-full bg-[var(--color-surface,#14161b)]/90 backdrop-blur-md border border-[var(--color-border)] text-[11px] sm:text-xs text-[var(--color-primary)] font-semibold tracking-widest uppercase mb-4 sm:mb-6 shadow-lg animate-fade-in">
-          <Sparkles className="w-3.5 h-3.5" />
+        <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1 sm:py-1.5 rounded-full bg-[var(--color-surface,#14161b)]/90 backdrop-blur-md border border-[var(--color-border)] text-[10px] sm:text-xs text-[var(--color-primary)] font-semibold tracking-widest uppercase mb-3.5 sm:mb-6 shadow-lg animate-fade-in">
+          <Sparkles className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
           <span>{brandConfig.businessTypes[0]} & Bridal Suite</span>
         </div>
 
         {/* Main Headline */}
-        <h1 className="font-heading text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-normal tracking-tight text-white max-w-4xl leading-[1.12] text-balance">
+        <h1 className="font-heading text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-normal tracking-tight text-white max-w-4xl leading-[1.18] sm:leading-[1.12] text-balance px-1">
           {brandConfig.tagline}
         </h1>
 
         {/* Brand Positioning Paragraph */}
-        <p className="mt-4 sm:mt-6 text-sm sm:text-base lg:text-xl text-neutral-300 max-w-2xl font-light leading-relaxed text-balance px-2">
+        <p className="mt-3.5 sm:mt-6 text-xs sm:text-base lg:text-xl text-neutral-300 max-w-2xl font-light leading-relaxed text-balance px-2">
           {brandConfig.positioning}
         </p>
 

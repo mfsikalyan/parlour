@@ -15,7 +15,7 @@ export function OffersSection() {
   const activeOffers = offersData.filter((o) => o.active && o.featured);
 
   return (
-    <section className="py-20 lg:py-28 bg-[var(--color-background)]">
+    <section className="py-12 sm:py-16 lg:py-24 bg-[var(--color-background)]">
       <Container>
         <SectionHeading
           eyebrow="Special Packages"
@@ -23,7 +23,7 @@ export function OffersSection() {
           subtitle="Transparent, bundled services offering dedicated attention at special seasonal rates. Clear terms with zero hidden fees."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {activeOffers.map((offer) => (
             <article
               key={offer.id}

@@ -14,7 +14,7 @@ export function TeamPreview() {
   const team = getFeaturedTeam().slice(0, 4);
 
   return (
-    <section className="py-20 lg:py-28 bg-[var(--color-background)]">
+    <section className="py-12 sm:py-16 lg:py-24 bg-[var(--color-background)]">
       <Container>
         <SectionHeading
           eyebrow="Master Craftsmen"
@@ -22,7 +22,7 @@ export function TeamPreview() {
           subtitle="Every stylist at Aura Luxe is an internationally accredited artisan committed to listening, advising, and elevating your natural features."
         />
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 lg:gap-8">
           {team.map((member) => (
             <article
               key={member.slug}

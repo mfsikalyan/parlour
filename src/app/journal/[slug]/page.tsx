@@ -78,15 +78,15 @@ export default async function JournalArticlePage({ params }: JournalPageProps) {
         </div>
 
         {/* Article Header */}
-        <header className="space-y-4 mb-8">
+        <header className="space-y-4 mb-6 sm:mb-8">
           <span className="text-xs uppercase font-bold tracking-widest text-[var(--color-primary)] px-3 py-1 rounded-full bg-[var(--color-badge-bg)] inline-block">
             {article.category}
           </span>
-          <h1 className="font-heading text-3xl sm:text-5xl font-normal text-[var(--color-text)] tracking-tight leading-tight">
+          <h1 className="font-heading text-2xl sm:text-4xl lg:text-5xl font-normal text-[var(--color-text)] tracking-tight leading-tight">
             {article.title}
           </h1>
 
-          <div className="flex flex-wrap items-center gap-4 text-xs text-[var(--color-text-muted)] pt-2 border-y border-[var(--color-border)] py-3">
+          <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs text-[var(--color-text-muted)] pt-2 border-y border-[var(--color-border)] py-3">
             <span className="flex items-center gap-1.5 text-[var(--color-text)] font-medium">
               <User className="w-3.5 h-3.5 text-[var(--color-primary)]" />
               <span>{article.author} ({article.authorRole})</span>
@@ -105,7 +105,7 @@ export default async function JournalArticlePage({ params }: JournalPageProps) {
         </header>
 
         {/* Featured Image */}
-        <div className="relative aspect-[16/9] w-full rounded-[var(--border-radius,8px)] overflow-hidden bg-[var(--color-surface-subtle)] border border-[var(--color-border)] shadow-xl mb-10">
+        <div className="relative aspect-[16/9] w-full rounded-[var(--border-radius,8px)] overflow-hidden bg-[var(--color-surface-subtle)] border border-[var(--color-border)] shadow-xl mb-8 sm:mb-10">
           <Image
             src={article.image}
             alt={article.imageAlt}
@@ -117,7 +117,7 @@ export default async function JournalArticlePage({ params }: JournalPageProps) {
         </div>
 
         {/* Article Body */}
-        <article className="prose prose-invert max-w-none space-y-6 text-sm sm:text-base text-[var(--color-text-muted)] leading-relaxed">
+        <article className="prose prose-invert max-w-none space-y-4 sm:space-y-6 text-sm sm:text-base text-[var(--color-text-muted)] leading-relaxed">
           {article.content.map((paragraph, index) => (
             <p key={index} className="text-[var(--color-text)] leading-relaxed">
               {paragraph}
@@ -126,14 +126,14 @@ export default async function JournalArticlePage({ params }: JournalPageProps) {
         </article>
 
         {/* CTA Card at the bottom */}
-        <div className="mt-14 p-8 rounded-[var(--border-radius,8px)] bg-[var(--color-surface,#14161b)] border border-[var(--color-border)] text-center space-y-4">
-          <h3 className="font-heading text-xl font-medium text-[var(--color-text)]">
+        <div className="mt-10 sm:mt-14 p-5 sm:p-8 rounded-[var(--border-radius,8px)] bg-[var(--color-surface,#14161b)] border border-[var(--color-border)] text-center space-y-4">
+          <h3 className="font-heading text-lg sm:text-xl font-medium text-[var(--color-text)]">
             Ready to consult with {article.author}?
           </h3>
           <p className="text-xs sm:text-sm text-[var(--color-text-muted)] max-w-md mx-auto">
             Book an appointment directly with our master team at {brandConfig.name}.
           </p>
-          <Button href="/book" variant="gold" size="md">
+          <Button href="/book" variant="gold" size="md" className="w-full sm:w-auto">
             Request Appointment
           </Button>
         </div>

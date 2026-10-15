@@ -12,17 +12,17 @@ export function TechnologyPreview() {
   const featuredTech = salonTechnologies.slice(0, 3);
 
   return (
-    <section className="py-20 lg:py-28 bg-[var(--color-surface,#14161b)] border-y border-[var(--color-border)]">
+    <section className="py-12 sm:py-16 lg:py-24 bg-[var(--color-surface,#14161b)] border-y border-[var(--color-border)]">
       <Container>
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-14">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 sm:gap-6 mb-8 sm:mb-14">
           <div>
-            <span className="text-xs uppercase tracking-[0.25em] font-semibold text-[var(--color-primary)] px-3 py-1 rounded-full bg-[var(--color-badge-bg)] border border-[var(--color-border)] inline-block mb-3">
+            <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.25em] font-semibold text-[var(--color-primary)] px-3 py-1 rounded-full bg-[var(--color-badge-bg)] border border-[var(--color-border)] inline-block mb-2.5 sm:mb-3">
               Clinical Beauty Science
             </span>
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-normal text-[var(--color-text)] tracking-tight">
+            <h2 className="font-heading text-2xl sm:text-4xl lg:text-5xl font-normal text-[var(--color-text)] tracking-tight leading-[1.18] sm:leading-tight">
               State-of-the-Art Salon Technologies
             </h2>
-            <p className="mt-3 text-sm sm:text-base text-[var(--color-text-muted)] max-w-2xl leading-relaxed">
+            <p className="mt-2.5 sm:mt-3 text-xs sm:text-base text-[var(--color-text-muted)] max-w-2xl leading-relaxed">
               We bridge luxury sensory relaxation with medical-grade equipment. Every treatment is backed by calibrated technologies designed for visible, lasting results.
             </p>
           </div>
@@ -31,14 +31,14 @@ export function TechnologyPreview() {
             href="/technology"
             variant="outline"
             icon={<ArrowRight className="w-4 h-4" />}
-            className="shrink-0"
+            className="shrink-0 w-full sm:w-auto"
           >
             Explore All 8 Technologies
           </Button>
         </div>
 
         {/* 3 Featured Tech Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {featuredTech.map((tech) => (
             <article
               key={tech.id}

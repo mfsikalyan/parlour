@@ -24,23 +24,23 @@ export default function TeamPage() {
   const activeTeam = teamData.filter((m) => m.active);
 
   return (
-    <div className="bg-[var(--color-background)] min-h-screen py-12 sm:py-16">
+    <div className="bg-[var(--color-background)] min-h-screen py-8 sm:py-12 lg:py-16">
       <Container>
         <Breadcrumbs items={[{ label: "Stylists & Team" }]} />
 
-        <div className="my-8 text-center max-w-3xl mx-auto">
+        <div className="my-6 sm:my-8 text-center max-w-3xl mx-auto">
           <span className="text-xs uppercase tracking-[0.25em] font-semibold text-[var(--color-primary)] px-3 py-1 rounded-full bg-[var(--color-badge-bg)] border border-[var(--color-border)] inline-block mb-3">
             The Artisans
           </span>
-          <h1 className="font-heading text-3xl sm:text-5xl font-normal text-[var(--color-text)] tracking-tight">
+          <h1 className="font-heading text-2xl sm:text-4xl lg:text-5xl font-normal text-[var(--color-text)] tracking-tight">
             Meet Our Creative Team
           </h1>
-          <p className="mt-4 text-sm sm:text-base text-[var(--color-text-muted)] leading-relaxed">
+          <p className="mt-3 sm:mt-4 text-xs sm:text-base text-[var(--color-text-muted)] leading-relaxed">
             Our salon is home to passionate craftsmen certified by Vidal Sassoon, Toni & Guy, and international bridal academies. We believe exceptional salon experiences start with active listening.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8 mt-8 sm:mt-12">
           {activeTeam.map((member) => (
             <article
               key={member.slug}
@@ -62,9 +62,9 @@ export default function TeamPage() {
                 </div>
               </div>
 
-              <div className="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div className="p-5 sm:p-6 flex-1 flex flex-col justify-between space-y-4">
                 <div>
-                  <h3 className="font-heading text-xl font-medium text-[var(--color-text)] group-hover:text-[var(--color-primary)] transition-colors">
+                  <h3 className="font-heading text-lg sm:text-xl font-medium text-[var(--color-text)] group-hover:text-[var(--color-primary)] transition-colors">
                     <Link href={`/team/${member.slug}`}>
                       {member.name}
                     </Link>
@@ -72,7 +72,7 @@ export default function TeamPage() {
                   <span className="text-xs text-[var(--color-primary)] font-semibold block mt-0.5">
                     {member.role}
                   </span>
-                  <p className="mt-3 text-xs sm:text-sm text-[var(--color-text-muted)] line-clamp-3 leading-relaxed">
+                  <p className="mt-2.5 sm:mt-3 text-xs sm:text-sm text-[var(--color-text-muted)] line-clamp-3 leading-relaxed">
                     {member.bio}
                   </p>
                 </div>
@@ -94,7 +94,7 @@ export default function TeamPage() {
                     </div>
                   </div>
 
-                  <div className="pt-2 flex items-center justify-between">
+                  <div className="pt-2 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
                     <Link
                       href={`/team/${member.slug}`}
                       className="text-xs font-semibold text-[var(--color-text-muted)] hover:text-[var(--color-text)] transition-colors flex items-center gap-1"
@@ -108,6 +108,7 @@ export default function TeamPage() {
                       variant="primary"
                       size="sm"
                       icon={<Calendar className="w-3.5 h-3.5" />}
+                      className="w-full sm:w-auto"
                     >
                       Book With {member.name.split(" ")[0]}
                     </Button>

@@ -31,6 +31,10 @@
 html {
   scroll-behavior: smooth;
   color-scheme: dark;
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -42,10 +46,31 @@ body {
   flex-direction: column;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 100%;
+  touch-action: manipulation;
+  -webkit-overflow-scrolling: touch;
+}
+
+img,
+svg,
+video,
+iframe {
+  max-width: 100%;
 }
 
 .font-heading {
   font-family: var(--font-heading);
+}
+
+/* Hide scrollbars for smooth mobile swiping bars */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* Accessibility: Honor reduced motion preferences */

@@ -52,36 +52,36 @@ export function ServiceCard({ service }: ServiceCardProps) {
       </div>
 
       {/* Card Content */}
-      <div className="flex-1 p-5 sm:p-6 flex flex-col justify-between space-y-4">
+      <div className="flex-1 p-4 sm:p-6 flex flex-col justify-between space-y-3 sm:space-y-4">
         <div>
           <h3
             id={`service-title-${service.slug}`}
-            className="font-heading text-lg sm:text-xl font-medium text-[var(--color-text)] group-hover:text-[var(--color-primary)] transition-colors leading-snug"
+            className="font-heading text-base sm:text-xl font-medium text-[var(--color-text)] group-hover:text-[var(--color-primary)] transition-colors leading-snug"
           >
             <Link href={`/services/${service.slug}`} className="focus:outline-none">
               {service.title}
             </Link>
           </h3>
-          <p className="mt-2 text-xs sm:text-sm text-[var(--color-text-muted)] line-clamp-2 leading-relaxed">
+          <p className="mt-1.5 sm:mt-2 text-xs sm:text-sm text-[var(--color-text-muted)] line-clamp-2 leading-relaxed">
             {service.shortDescription}
           </p>
         </div>
 
         {/* Pricing & Booking Action */}
-        <div className="pt-4 border-t border-[var(--color-border)] flex items-center justify-between gap-3">
+        <div className="pt-3 sm:pt-4 border-t border-[var(--color-border)] flex items-center justify-between gap-2 sm:gap-3">
           <div>
-            <span className="text-[10px] uppercase tracking-wider text-[var(--color-text-muted)] block">
+            <span className="text-[9px] sm:text-[10px] uppercase tracking-wider text-[var(--color-text-muted)] block">
               Investment
             </span>
-            <span className="text-base sm:text-lg font-bold text-[var(--color-primary)]">
+            <span className="text-sm sm:text-lg font-bold text-[var(--color-primary)]">
               {priceDisplay}
             </span>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 sm:gap-2">
             <Link
               href={`/services/${service.slug}`}
-              className="text-xs font-semibold text-[var(--color-text-muted)] hover:text-[var(--color-text)] p-2 transition-colors"
+              className="text-xs font-semibold text-[var(--color-text-muted)] hover:text-[var(--color-text)] py-1.5 px-2 transition-colors"
               aria-label={`View details for ${service.title}`}
             >
               Details

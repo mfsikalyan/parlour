@@ -14,7 +14,7 @@ export function GalleryPreview() {
   const galleryItems = getFeaturedGallery().slice(0, 6);
 
   return (
-    <section className="py-20 lg:py-28 bg-[var(--color-surface,#14161b)] border-y border-[var(--color-border)]">
+    <section className="py-12 sm:py-16 lg:py-24 bg-[var(--color-surface,#14161b)] border-y border-[var(--color-border)]">
       <Container>
         <SectionHeading
           eyebrow="Visual Portfolio"
@@ -22,7 +22,7 @@ export function GalleryPreview() {
           subtitle="Explore authentic client looks created on the salon floor—no stock masquerades, just genuine artistry and healthy hair vitality."
         />
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6">
           {galleryItems.map((item) => (
             <Link
               key={item.id}

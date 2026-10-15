@@ -350,12 +350,12 @@ export default function BridalPage() {
         </section>
 
         {/* Global Bridal Lookbook / Portfolio Showcase */}
-        <section className="my-24 pt-12 border-t border-[var(--color-border)]">
-          <div className="text-center max-w-3xl mx-auto mb-14">
-            <span className="text-xs uppercase tracking-[0.25em] font-semibold text-[var(--color-primary)] px-3 py-1 rounded-full bg-[var(--color-badge-bg)] border border-[var(--color-border)] inline-block mb-3">
+        <section className="my-12 sm:my-16 lg:my-24 pt-8 sm:pt-12 border-t border-[var(--color-border)]">
+          <div className="text-center max-w-3xl mx-auto mb-8 sm:mb-14">
+            <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.25em] font-semibold text-[var(--color-primary)] px-3 py-1 rounded-full bg-[var(--color-badge-bg)] border border-[var(--color-border)] inline-block mb-2.5 sm:mb-3">
               Couture Lookbook
             </span>
-            <h2 className="font-heading text-3xl sm:text-5xl font-normal text-[var(--color-text)] tracking-tight">
+            <h2 className="font-heading text-2xl sm:text-4xl lg:text-5xl font-normal text-[var(--color-text)] tracking-tight leading-[1.18] sm:leading-tight px-1">
               A Symphony of Traditions & Global Glamour
             </h2>
             <p className="mt-3 text-sm sm:text-base text-[var(--color-text-muted)] leading-relaxed">
@@ -417,12 +417,12 @@ export default function BridalPage() {
         </section>
 
         {/* Curated Bridal Packages Grid with Editorial Photos */}
-        <section className="my-24">
-          <div className="text-center max-w-2xl mx-auto mb-14">
-            <span className="text-xs uppercase tracking-widest text-[var(--color-primary)] font-semibold">
+        <section className="my-12 sm:my-16 lg:my-24">
+          <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-14">
+            <span className="text-[10px] sm:text-xs uppercase tracking-widest text-[var(--color-primary)] font-semibold">
               Bespoke Bridal Collections
             </span>
-            <h2 className="font-heading text-3xl sm:text-4xl font-normal text-[var(--color-text)] mt-2">
+            <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-normal text-[var(--color-text)] mt-2">
               Curated Wedding Rituals & Packages
             </h2>
             <p className="text-xs sm:text-sm text-[var(--color-text-muted)] mt-2">
@@ -509,13 +509,13 @@ export default function BridalPage() {
         </section>
 
         {/* International & Destination Brides VIP Experience */}
-        <section className="my-24 py-16 px-6 sm:px-12 rounded-[var(--border-radius,8px)] bg-[var(--color-surface,#14161b)] border border-[var(--color-border)]">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="space-y-6">
-              <span className="text-xs uppercase tracking-[0.25em] font-semibold text-[var(--color-primary)] px-3 py-1 rounded-full bg-[var(--color-badge-bg)] border border-[var(--color-border)] inline-block">
+        <section className="my-12 sm:my-16 lg:my-24 py-10 sm:py-16 px-4 sm:px-8 lg:px-12 rounded-[var(--border-radius,8px)] bg-[var(--color-surface,#14161b)] border border-[var(--color-border)]">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+            <div className="space-y-4 sm:space-y-6">
+              <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.25em] font-semibold text-[var(--color-primary)] px-3 py-1 rounded-full bg-[var(--color-badge-bg)] border border-[var(--color-border)] inline-block">
                 Global Bridal Care
               </span>
-              <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-normal text-[var(--color-text)] leading-tight">
+              <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-normal text-[var(--color-text)] leading-tight">
                 Designed for International & Destination Brides
               </h2>
               <p className="text-sm sm:text-base text-[var(--color-text-muted)] leading-relaxed">
@@ -574,12 +574,12 @@ export default function BridalPage() {
         </section>
 
         {/* Real Bride Testimonials */}
-        <section className="my-24">
-          <div className="text-center max-w-2xl mx-auto mb-14">
-            <span className="text-xs uppercase tracking-widest text-[var(--color-primary)] font-semibold">
+        <section className="my-12 sm:my-16 lg:my-24">
+          <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-14">
+            <span className="text-[10px] sm:text-xs uppercase tracking-widest text-[var(--color-primary)] font-semibold">
               Real Love Stories
             </span>
-            <h2 className="font-heading text-3xl sm:text-4xl font-normal text-[var(--color-text)] mt-2">
+            <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-normal text-[var(--color-text)] mt-2">
               Words From Our Aura Luxe Brides
             </h2>
           </div>
@@ -618,9 +618,9 @@ export default function BridalPage() {
         </section>
 
         {/* Final CTA Banner */}
-        <section className="my-16 p-8 sm:p-12 rounded-[var(--border-radius,8px)] bg-gradient-to-r from-[var(--color-surface,#14161b)] via-[var(--color-surface-elevated,#1c1f26)] to-[var(--color-surface,#14161b)] border border-[var(--color-primary)] text-center max-w-4xl mx-auto shadow-2xl">
-          <Sparkles className="w-8 h-8 text-[var(--color-primary)] mx-auto mb-4" />
-          <h2 className="font-heading text-2xl sm:text-4xl font-normal text-[var(--color-text)]">
+        <section className="my-12 sm:my-16 p-6 sm:p-12 rounded-[var(--border-radius,8px)] bg-gradient-to-r from-[var(--color-surface,#14161b)] via-[var(--color-surface-elevated,#1c1f26)] to-[var(--color-surface,#14161b)] border border-[var(--color-primary)] text-center max-w-4xl mx-auto shadow-2xl">
+          <Sparkles className="w-6 h-6 sm:w-8 sm:h-8 text-[var(--color-primary)] mx-auto mb-3 sm:mb-4" />
+          <h2 className="font-heading text-2xl sm:text-3xl lg:text-4xl font-normal text-[var(--color-text)]">
             Begin Your Wedding Journey With Us
           </h2>
           <p className="mt-3 text-sm text-[var(--color-text-muted)] max-w-xl mx-auto leading-relaxed">

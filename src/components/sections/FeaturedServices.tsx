@@ -11,7 +11,7 @@ export function FeaturedServices() {
   const featured = getFeaturedServices().slice(0, 6);
 
   return (
-    <section className="py-20 lg:py-28 bg-[var(--color-background)]">
+    <section className="py-12 sm:py-16 lg:py-24 bg-[var(--color-background)]">
       <Container>
         <SectionHeading
           eyebrow="Signature Portfolio"

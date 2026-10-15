@@ -9,7 +9,7 @@ export function Testimonials() {
   if (!featureFlags.testimonials) return null;
 
   return (
-    <section className="py-20 lg:py-28 bg-[var(--color-surface,#14161b)] border-y border-[var(--color-border)]">
+    <section className="py-12 sm:py-16 lg:py-24 bg-[var(--color-surface,#14161b)] border-y border-[var(--color-border)]">
       <Container>
         <SectionHeading
           eyebrow="Guest Impressions"
@@ -17,11 +17,11 @@ export function Testimonials() {
           subtitle="Genuine experiences shared by verified clients who trust our salon with their hair, skin, and milestone wedding days."
         />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 sm:gap-8">
           {testimonialsData.map((item) => (
             <article
               key={item.id}
-              className="flex flex-col justify-between p-6 sm:p-8 rounded-[var(--border-radius,8px)] bg-[var(--color-surface-subtle)] border border-[var(--color-border)] shadow-md"
+              className="flex flex-col justify-between p-5 sm:p-8 rounded-[var(--border-radius,8px)] bg-[var(--color-surface-subtle)] border border-[var(--color-border)] shadow-md"
             >
               <div className="space-y-4">
                 {/* Rating & Source badge */}

@@ -6,24 +6,24 @@ import { Button } from "@/components/ui/Button";
 
 export function BookingCTA() {
   return (
-    <section className="py-20 lg:py-24 bg-gradient-to-b from-[var(--color-surface,#14161b)] to-[var(--color-background)] border-t border-[var(--color-border)] relative overflow-hidden">
+    <section className="py-12 sm:py-16 lg:py-24 bg-gradient-to-b from-[var(--color-surface,#14161b)] to-[var(--color-background)] border-t border-[var(--color-border)] relative overflow-hidden">
       {/* Subtle Glow Backdrop */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-[var(--color-primary)]/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 sm:w-96 h-72 sm:h-96 bg-[var(--color-primary)]/10 rounded-full blur-3xl pointer-events-none" />
 
       <Container className="relative z-10 text-center max-w-4xl">
-        <span className="text-xs uppercase tracking-[0.25em] font-semibold text-[var(--color-primary)] px-3 py-1 rounded-full bg-[var(--color-badge-bg)] border border-[var(--color-border)] inline-block mb-4">
+        <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.25em] font-semibold text-[var(--color-primary)] px-3 py-1 rounded-full bg-[var(--color-badge-bg)] border border-[var(--color-border)] inline-block mb-3 sm:mb-4">
           Reserve Your Chair
         </span>
 
-        <h2 className="font-heading text-3xl sm:text-5xl font-normal text-[var(--color-text)] tracking-tight text-balance">
+        <h2 className="font-heading text-2xl sm:text-4xl lg:text-5xl font-normal text-[var(--color-text)] tracking-tight text-balance leading-[1.18] sm:leading-tight px-1">
           Ready to Elevate Your Everyday Look & Well-Being?
         </h2>
 
-        <p className="mt-4 text-sm sm:text-base text-[var(--color-text-muted)] max-w-2xl mx-auto leading-relaxed">
+        <p className="mt-3 sm:mt-4 text-xs sm:text-base text-[var(--color-text-muted)] max-w-2xl mx-auto leading-relaxed px-2">
           Whether you desire a subtle texturizing cut, dimensional balayage, or an opulent bridal transformation, our master team is ready to welcome you.
         </p>
 
-        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 w-full">
           <Button
             href="/book"
             variant="gold"

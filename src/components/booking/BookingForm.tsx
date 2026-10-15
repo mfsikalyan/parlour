@@ -240,21 +240,21 @@ export function BookingForm() {
 
             {/* Service Summary Preview Card */}
             {selectedService && (
-              <div className="p-4 rounded-md bg-[var(--color-surface-elevated)] border border-[var(--color-border)] flex items-center justify-between">
+              <div className="p-3.5 sm:p-4 rounded-md bg-[var(--color-surface-elevated)] border border-[var(--color-border)] flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
                 <div>
-                  <span className="text-xs text-[var(--color-primary)] uppercase tracking-wider font-semibold block">
+                  <span className="text-[10px] sm:text-xs text-[var(--color-primary)] uppercase tracking-wider font-semibold block">
                     {selectedService.categoryLabel}
                   </span>
-                  <span className="font-medium text-sm text-[var(--color-text)]">
+                  <span className="font-medium text-xs sm:text-sm text-[var(--color-text)]">
                     {selectedService.title}
                   </span>
-                  <span className="text-xs text-[var(--color-text-muted)] block mt-0.5">
+                  <span className="text-[11px] sm:text-xs text-[var(--color-text-muted)] block mt-0.5">
                     Estimated Duration: {selectedService.durationMinutes} minutes
                   </span>
                 </div>
-                <div className="text-right">
-                  <span className="text-xs text-[var(--color-text-muted)] block">Investment</span>
-                  <span className="font-bold text-[var(--color-primary)] text-base">
+                <div className="sm:text-right pt-2 sm:pt-0 border-t sm:border-t-0 border-[var(--color-border)]">
+                  <span className="text-[10px] sm:text-xs text-[var(--color-text-muted)] block">Investment</span>
+                  <span className="font-bold text-[var(--color-primary)] text-sm sm:text-base">
                     {formatCurrency(selectedService.price, { prefixFrom: selectedService.priceFrom })}
                   </span>
                 </div>
@@ -262,7 +262,7 @@ export function BookingForm() {
             )}
 
             <div className="pt-4 flex justify-end">
-              <Button type="button" onClick={handleNextStep} icon={<ChevronRight className="w-4 h-4" />}>
+              <Button type="button" onClick={handleNextStep} icon={<ChevronRight className="w-4 h-4" />} className="w-full sm:w-auto">
                 Continue to Date & Time
               </Button>
             </div>

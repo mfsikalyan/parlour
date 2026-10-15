@@ -8,7 +8,7 @@ export function LocationSection() {
   const primaryBranch = brandConfig.branches[0];
 
   return (
-    <section className="py-20 lg:py-28 bg-[var(--color-surface,#14161b)] border-y border-[var(--color-border)]">
+    <section className="py-12 sm:py-16 lg:py-24 bg-[var(--color-surface,#14161b)] border-y border-[var(--color-border)]">
       <Container>
         <SectionHeading
           eyebrow="Visit Our Studios"
@@ -16,13 +16,13 @@ export function LocationSection() {
           subtitle="Experience our serene sanctuary nestled in Bengaluru's vibrant avenues. Complimentary valet parking provided for all salon patrons."
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch">
           {/* Branch Details Cards (Col 5) */}
-          <div className="lg:col-span-5 space-y-6 flex flex-col justify-between">
+          <div className="lg:col-span-5 space-y-4 sm:space-y-6 flex flex-col justify-between">
             {brandConfig.branches.map((branch) => (
               <div
                 key={branch.id}
-                className="p-6 rounded-[var(--border-radius,8px)] bg-[var(--color-surface-subtle)] border border-[var(--color-border)] space-y-3"
+                className="p-4 sm:p-6 rounded-[var(--border-radius,8px)] bg-[var(--color-surface-subtle)] border border-[var(--color-border)] space-y-3"
               >
                 <div className="flex items-center justify-between">
                   <h3 className="font-heading text-lg font-semibold text-[var(--color-text)] flex items-center gap-2">
@@ -63,7 +63,7 @@ export function LocationSection() {
             ))}
 
             {/* Operating Schedule Box */}
-            <div className="p-6 rounded-[var(--border-radius,8px)] bg-[var(--color-surface-elevated)] border border-[var(--color-border)] space-y-2">
+            <div className="p-4 sm:p-6 rounded-[var(--border-radius,8px)] bg-[var(--color-surface-elevated)] border border-[var(--color-border)] space-y-2">
               <h4 className="font-heading text-base font-medium text-[var(--color-text)] flex items-center gap-2">
                 <Clock className="w-4 h-4 text-[var(--color-primary)]" />
                 <span>Operating Timings</span>
@@ -85,17 +85,17 @@ export function LocationSection() {
           </div>
 
           {/* Interactive Map Embed (Col 7) */}
-          <div className="lg:col-span-7 rounded-[var(--border-radius,8px)] overflow-hidden border border-[var(--color-border)] shadow-xl min-h-[380px] bg-[var(--color-surface-subtle)] relative">
+          <div className="lg:col-span-7 rounded-[var(--border-radius,8px)] overflow-hidden border border-[var(--color-border)] shadow-xl min-h-[260px] sm:min-h-[380px] bg-[var(--color-surface-subtle)] relative">
             <iframe
               title={`Google Maps location for ${brandConfig.name}`}
               src={primaryBranch.mapEmbedUrl}
               width="100%"
               height="100%"
-              style={{ border: 0, minHeight: "380px" }}
+              style={{ border: 0 }}
               allowFullScreen={false}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              className="w-full h-full filter invert-[0.9] hue-rotate-[180deg] contrast-[1.2]"
+              className="w-full h-full min-h-[260px] sm:min-h-[380px] filter invert-[0.9] hue-rotate-[180deg] contrast-[1.2]"
             />
           </div>
         </div>

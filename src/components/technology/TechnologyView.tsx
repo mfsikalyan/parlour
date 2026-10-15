@@ -29,7 +29,7 @@ export function TechnologyView() {
     <div>
       {/* Category Filter Pills */}
       <div
-        className="flex items-center justify-center flex-wrap gap-2 mb-12"
+        className="flex items-center sm:justify-center overflow-x-auto no-scrollbar scroll-smooth gap-2 pb-2 px-1 -mx-2 sm:mx-0 sm:flex-wrap mb-8 sm:mb-12"
         role="tablist"
         aria-label="Salon Technology Categories"
       >
@@ -41,7 +41,7 @@ export function TechnologyView() {
               role="tab"
               aria-selected={isActive}
               onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wider transition-all cursor-pointer border ${
+              className={`px-3.5 sm:px-4 py-2 rounded-full text-xs font-semibold tracking-wider transition-all cursor-pointer border whitespace-nowrap shrink-0 ${
                 isActive
                   ? "bg-[var(--color-primary)] text-[var(--color-primary-foreground)] border-[var(--color-primary)] shadow-md"
                   : "bg-[var(--color-surface,#14161b)] text-[var(--color-text-muted)] hover:text-[var(--color-text)] border border-[var(--color-border)] hover:border-[var(--color-border-strong)]"
@@ -54,7 +54,7 @@ export function TechnologyView() {
       </div>
 
       {/* Grid of Technology Cards */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-10">
         {filteredTechnologies.map((tech) => (
           <article
             key={tech.id}
