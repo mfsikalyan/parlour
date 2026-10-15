@@ -141,18 +141,18 @@ export function BookingForm() {
   const maxDateStr = maxDate.toISOString().split("T")[0];
 
   return (
-    <div className="max-w-3xl mx-auto bg-[var(--color-surface,#14161b)] rounded-[var(--border-radius,8px)] border border-[var(--color-border)] p-6 sm:p-10 shadow-xl">
+    <div className="max-w-3xl mx-auto bg-[var(--color-surface,#14161b)] rounded-[var(--border-radius,8px)] border border-[var(--color-border)] p-4 sm:p-8 lg:p-10 shadow-xl">
       {/* Wizard Step Indicator */}
-      <div className="mb-8" aria-label="Booking steps">
-        <div className="flex items-center justify-between text-xs font-semibold tracking-wider uppercase mb-3">
+      <div className="mb-6 sm:mb-8" aria-label="Booking steps">
+        <div className="flex items-center justify-between text-[11px] sm:text-xs font-semibold tracking-wider uppercase mb-3">
           <span className={currentStep >= 1 ? "text-[var(--color-primary)]" : "text-[var(--color-text-muted)]"}>
-            1. Service & Branch
+            1. <span className="hidden sm:inline">Service & Branch</span><span className="sm:hidden">Service</span>
           </span>
           <span className={currentStep >= 2 ? "text-[var(--color-primary)]" : "text-[var(--color-text-muted)]"}>
-            2. Date & Time
+            2. <span className="hidden sm:inline">Date & Time</span><span className="sm:hidden">Date</span>
           </span>
           <span className={currentStep >= 3 ? "text-[var(--color-primary)]" : "text-[var(--color-text-muted)]"}>
-            3. Details & Request
+            3. <span className="hidden sm:inline">Details & Request</span><span className="sm:hidden">Confirm</span>
           </span>
         </div>
         <div className="w-full bg-[var(--color-surface-subtle)] h-1.5 rounded-full overflow-hidden">
@@ -164,7 +164,7 @@ export function BookingForm() {
       </div>
 
       {/* Honest Policy Banner */}
-      <div className="mb-8 p-3.5 rounded-md bg-[var(--color-surface-subtle)] border border-[var(--color-border)] text-xs text-[var(--color-text-muted)] flex items-start gap-2.5">
+      <div className="mb-6 sm:mb-8 p-3 sm:p-3.5 rounded-md bg-[var(--color-surface-subtle)] border border-[var(--color-border)] text-xs text-[var(--color-text-muted)] flex items-start gap-2.5">
         <ShieldCheck className="w-4 h-4 text-[var(--color-primary)] shrink-0 mt-0.5" />
         <span>
           <strong>Honest Booking Mode:</strong> Submitting this form sends an appointment request directly to our concierge desk. We will confirm your exact slot via WhatsApp / SMS within 30 minutes. No payment required upfront.
@@ -175,7 +175,7 @@ export function BookingForm() {
         {/* STEP 1: SERVICE & BRANCH SELECTION */}
         {currentStep === 1 && (
           <div className="space-y-6">
-            <h3 className="font-heading text-xl font-medium text-[var(--color-text)]">
+            <h3 className="font-heading text-lg sm:text-xl font-medium text-[var(--color-text)]">
               Choose Service & Location
             </h3>
 
@@ -184,7 +184,7 @@ export function BookingForm() {
               <label htmlFor="branchId" className="block text-xs font-semibold uppercase tracking-wider text-[var(--color-text)] mb-2">
                 Salon Branch *
               </label>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
                 {brandConfig.branches.map((b) => {
                   const isSelected = formData.branchId === b.id;
                   return (
@@ -192,7 +192,7 @@ export function BookingForm() {
                       key={b.id}
                       type="button"
                       onClick={() => handleInputChange("branchId", b.id)}
-                      className={`text-left p-4 rounded-md border transition-all ${
+                      className={`text-left p-3.5 sm:p-4 rounded-md border transition-all ${
                         isSelected
                           ? "bg-[var(--color-surface-elevated)] border-[var(--color-primary)] ring-1 ring-[var(--color-primary)]"
                           : "bg-[var(--color-surface-subtle)] border-[var(--color-border)] hover:border-[var(--color-border-strong)]"
@@ -223,7 +223,7 @@ export function BookingForm() {
                 id="serviceSlug"
                 value={formData.serviceSlug}
                 onChange={(e) => handleInputChange("serviceSlug", e.target.value)}
-                className="w-full bg-[var(--color-surface-subtle)] text-[var(--color-text)] text-sm rounded-md border border-[var(--color-border)] p-3 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
+                className="w-full bg-[var(--color-surface-subtle)] text-[var(--color-text)] text-base sm:text-sm rounded-md border border-[var(--color-border)] p-3 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
               >
                 {servicesData.map((s) => (
                   <option key={s.slug} value={s.slug} className="bg-[var(--color-surface)]">
@@ -289,7 +289,7 @@ export function BookingForm() {
                   max={maxDateStr}
                   value={formData.date}
                   onChange={(e) => handleInputChange("date", e.target.value)}
-                  className="w-full bg-[var(--color-surface-subtle)] text-[var(--color-text)] text-sm rounded-md border border-[var(--color-border)] p-3 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
+                  className="w-full bg-[var(--color-surface-subtle)] text-[var(--color-text)] text-base sm:text-sm rounded-md border border-[var(--color-border)] p-3 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
                 />
               </div>
               {errors.date && (
@@ -312,7 +312,7 @@ export function BookingForm() {
                       key={slot}
                       type="button"
                       onClick={() => handleInputChange("timeSlot", slot)}
-                      className={`py-2 px-3 rounded text-xs font-medium border text-center transition-all ${
+                      className={`py-2.5 px-2 sm:px-3 rounded text-xs font-medium border text-center transition-all active:scale-95 ${
                         isSelected
                           ? "bg-[var(--color-primary)] text-[var(--color-primary-foreground)] border-[var(--color-primary)] font-bold shadow"
                           : "bg-[var(--color-surface-subtle)] text-[var(--color-text-muted)] border-[var(--color-border)] hover:text-[var(--color-text)] hover:border-[var(--color-border-strong)]"
@@ -339,7 +339,7 @@ export function BookingForm() {
                 id="stylistSlug"
                 value={formData.stylistSlug}
                 onChange={(e) => handleInputChange("stylistSlug", e.target.value)}
-                className="w-full bg-[var(--color-surface-subtle)] text-[var(--color-text)] text-sm rounded-md border border-[var(--color-border)] p-3 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
+                className="w-full bg-[var(--color-surface-subtle)] text-[var(--color-text)] text-base sm:text-sm rounded-md border border-[var(--color-border)] p-3 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
               >
                 <option value="" className="bg-[var(--color-surface)]">
                   First Available Master Specialist
@@ -352,11 +352,11 @@ export function BookingForm() {
               </select>
             </div>
 
-            <div className="pt-4 flex items-center justify-between">
-              <Button type="button" variant="ghost" onClick={() => setCurrentStep(1)}>
+            <div className="pt-4 flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-between gap-3">
+              <Button type="button" variant="ghost" onClick={() => setCurrentStep(1)} className="w-full sm:w-auto">
                 ← Back
               </Button>
-              <Button type="button" onClick={handleNextStep} icon={<ChevronRight className="w-4 h-4" />}>
+              <Button type="button" onClick={handleNextStep} icon={<ChevronRight className="w-4 h-4" />} className="w-full sm:w-auto">
                 Continue to Client Info
               </Button>
             </div>
@@ -366,7 +366,7 @@ export function BookingForm() {
         {/* STEP 3: CLIENT DETAILS & SUBMIT */}
         {currentStep === 3 && (
           <div className="space-y-6">
-            <h3 className="font-heading text-xl font-medium text-[var(--color-text)]">
+            <h3 className="font-heading text-lg sm:text-xl font-medium text-[var(--color-text)]">
               Your Contact Details
             </h3>
 
@@ -383,7 +383,7 @@ export function BookingForm() {
                   value={formData.fullName}
                   onChange={(e) => handleInputChange("fullName", e.target.value)}
                   placeholder="e.g. Ananya Sharma"
-                  className="w-full bg-[var(--color-surface-subtle)] text-[var(--color-text)] text-sm rounded-md border border-[var(--color-border)] p-3 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
+                  className="w-full bg-[var(--color-surface-subtle)] text-[var(--color-text)] text-base sm:text-sm rounded-md border border-[var(--color-border)] p-3 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
                 />
                 {errors.fullName && (
                   <p className="text-xs text-rose-400 mt-1 flex items-center gap-1">
@@ -404,7 +404,7 @@ export function BookingForm() {
                   value={formData.phone}
                   onChange={(e) => handleInputChange("phone", e.target.value)}
                   placeholder="e.g. +91 98765 43210"
-                  className="w-full bg-[var(--color-surface-subtle)] text-[var(--color-text)] text-sm rounded-md border border-[var(--color-border)] p-3 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
+                  className="w-full bg-[var(--color-surface-subtle)] text-[var(--color-text)] text-base sm:text-sm rounded-md border border-[var(--color-border)] p-3 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
                 />
                 {errors.phone && (
                   <p className="text-xs text-rose-400 mt-1 flex items-center gap-1">
@@ -425,7 +425,7 @@ export function BookingForm() {
                 value={formData.email}
                 onChange={(e) => handleInputChange("email", e.target.value)}
                 placeholder="name@example.com"
-                className="w-full bg-[var(--color-surface-subtle)] text-[var(--color-text)] text-sm rounded-md border border-[var(--color-border)] p-3 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
+                className="w-full bg-[var(--color-surface-subtle)] text-[var(--color-text)] text-base sm:text-sm rounded-md border border-[var(--color-border)] p-3 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
               />
               {errors.email && (
                 <p className="text-xs text-rose-400 mt-1 flex items-center gap-1">
@@ -445,7 +445,7 @@ export function BookingForm() {
                 value={formData.notes}
                 onChange={(e) => handleInputChange("notes", e.target.value)}
                 placeholder="Allergies, previous color history, wedding date, or specific requests..."
-                className="w-full bg-[var(--color-surface-subtle)] text-[var(--color-text)] text-sm rounded-md border border-[var(--color-border)] p-3 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
+                className="w-full bg-[var(--color-surface-subtle)] text-[var(--color-text)] text-base sm:text-sm rounded-md border border-[var(--color-border)] p-3 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
               />
             </div>
 
@@ -469,8 +469,8 @@ export function BookingForm() {
               )}
             </div>
 
-            <div className="pt-4 flex items-center justify-between border-t border-[var(--color-border)]">
-              <Button type="button" variant="ghost" onClick={() => setCurrentStep(2)}>
+            <div className="pt-4 flex flex-col-reverse sm:flex-row items-stretch sm:items-center justify-between gap-3 border-t border-[var(--color-border)]">
+              <Button type="button" variant="ghost" onClick={() => setCurrentStep(2)} className="w-full sm:w-auto">
                 ← Back
               </Button>
 
@@ -480,6 +480,7 @@ export function BookingForm() {
                 size="lg"
                 isLoading={isSubmitting}
                 icon={<Sparkles className="w-4 h-4" />}
+                className="w-full sm:w-auto"
               >
                 Send Appointment Request
               </Button>

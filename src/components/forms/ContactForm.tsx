@@ -89,7 +89,7 @@ export function ContactForm() {
     <form
       onSubmit={handleSubmit}
       noValidate
-      className="bg-[var(--color-surface,#14161b)] p-6 sm:p-8 rounded-[var(--border-radius,8px)] border border-[var(--color-border)] shadow-xl space-y-5"
+      className="bg-[var(--color-surface,#14161b)] p-4 sm:p-8 rounded-[var(--border-radius,8px)] border border-[var(--color-border)] shadow-xl space-y-4 sm:space-y-5"
     >
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         {/* Full Name */}
@@ -104,7 +104,7 @@ export function ContactForm() {
             value={formData.fullName}
             onChange={(e) => handleChange("fullName", e.target.value)}
             placeholder="e.g. Priya Sharma"
-            className="w-full bg-[var(--color-surface-subtle)] text-[var(--color-text)] text-sm rounded-md border border-[var(--color-border)] p-3 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
+            className="w-full bg-[var(--color-surface-subtle)] text-[var(--color-text)] text-base sm:text-sm rounded-md border border-[var(--color-border)] p-3 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
           />
           {errors.fullName && (
             <p className="text-xs text-rose-400 mt-1 flex items-center gap-1">
@@ -125,7 +125,7 @@ export function ContactForm() {
             value={formData.phone}
             onChange={(e) => handleChange("phone", e.target.value)}
             placeholder="e.g. +91 98765 43210"
-            className="w-full bg-[var(--color-surface-subtle)] text-[var(--color-text)] text-sm rounded-md border border-[var(--color-border)] p-3 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
+            className="w-full bg-[var(--color-surface-subtle)] text-[var(--color-text)] text-base sm:text-sm rounded-md border border-[var(--color-border)] p-3 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
           />
           {errors.phone && (
             <p className="text-xs text-rose-400 mt-1 flex items-center gap-1">
@@ -148,7 +148,7 @@ export function ContactForm() {
             value={formData.email}
             onChange={(e) => handleChange("email", e.target.value)}
             placeholder="name@example.com"
-            className="w-full bg-[var(--color-surface-subtle)] text-[var(--color-text)] text-sm rounded-md border border-[var(--color-border)] p-3 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
+            className="w-full bg-[var(--color-surface-subtle)] text-[var(--color-text)] text-base sm:text-sm rounded-md border border-[var(--color-border)] p-3 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
           />
           {errors.email && (
             <p className="text-xs text-rose-400 mt-1 flex items-center gap-1">
@@ -166,7 +166,7 @@ export function ContactForm() {
             id="contact-branch"
             value={formData.branchId}
             onChange={(e) => handleChange("branchId", e.target.value)}
-            className="w-full bg-[var(--color-surface-subtle)] text-[var(--color-text)] text-sm rounded-md border border-[var(--color-border)] p-3 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
+            className="w-full bg-[var(--color-surface-subtle)] text-[var(--color-text)] text-base sm:text-sm rounded-md border border-[var(--color-border)] p-3 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
           >
             {brandConfig.branches.map((b) => (
               <option key={b.id} value={b.id} className="bg-[var(--color-surface)]">
@@ -186,7 +186,7 @@ export function ContactForm() {
           id="contact-subject"
           value={formData.subject}
           onChange={(e) => handleChange("subject", e.target.value)}
-          className="w-full bg-[var(--color-surface-subtle)] text-[var(--color-text)] text-sm rounded-md border border-[var(--color-border)] p-3 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
+          className="w-full bg-[var(--color-surface-subtle)] text-[var(--color-text)] text-base sm:text-sm rounded-md border border-[var(--color-border)] p-3 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
         >
           <option value="Appointment Inquiry">Appointment & Slot Inquiry</option>
           <option value="Bridal Consultation">Bridal Suite & Trial Consultation</option>
@@ -208,7 +208,7 @@ export function ContactForm() {
           value={formData.message}
           onChange={(e) => handleChange("message", e.target.value)}
           placeholder="How can our concierge assist your salon experience?"
-          className="w-full bg-[var(--color-surface-subtle)] text-[var(--color-text)] text-sm rounded-md border border-[var(--color-border)] p-3 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
+          className="w-full bg-[var(--color-surface-subtle)] text-[var(--color-text)] text-base sm:text-sm rounded-md border border-[var(--color-border)] p-3 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)]"
         />
         {errors.message && (
           <p className="text-xs text-rose-400 mt-1 flex items-center gap-1">

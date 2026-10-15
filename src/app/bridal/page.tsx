@@ -247,39 +247,40 @@ export default function BridalPage() {
               </p>
 
               {/* Trust Features Strip */}
-              <div className="grid grid-cols-3 gap-4 pt-2 border-y border-[var(--color-border)] py-4">
+              <div className="grid grid-cols-3 gap-2 sm:gap-4 pt-2 border-y border-[var(--color-border)] py-3 sm:py-4 text-center sm:text-left">
                 <div>
-                  <span className="font-heading text-xl sm:text-2xl font-bold text-[var(--color-primary)] block">
+                  <span className="font-heading text-lg sm:text-2xl font-bold text-[var(--color-primary)] block">
                     300+
                   </span>
-                  <span className="text-[11px] uppercase tracking-wider text-[var(--color-text-muted)]">
-                    Brides Styled Globally
+                  <span className="text-[10px] sm:text-[11px] uppercase tracking-wider text-[var(--color-text-muted)] leading-tight block mt-0.5">
+                    Brides Styled
                   </span>
                 </div>
                 <div>
-                  <span className="font-heading text-xl sm:text-2xl font-bold text-[var(--color-primary)] block">
+                  <span className="font-heading text-lg sm:text-2xl font-bold text-[var(--color-primary)] block">
                     18 Hours
                   </span>
-                  <span className="text-[11px] uppercase tracking-wider text-[var(--color-text-muted)]">
-                    Waterproof Longevity
+                  <span className="text-[10px] sm:text-[11px] uppercase tracking-wider text-[var(--color-text-muted)] leading-tight block mt-0.5">
+                    HD Waterproof
                   </span>
                 </div>
                 <div>
-                  <span className="font-heading text-xl sm:text-2xl font-bold text-[var(--color-primary)] block">
+                  <span className="font-heading text-lg sm:text-2xl font-bold text-[var(--color-primary)] block">
                     Type I–VI
                   </span>
-                  <span className="text-[11px] uppercase tracking-wider text-[var(--color-text-muted)]">
-                    All Skin Tones Certified
+                  <span className="text-[10px] sm:text-[11px] uppercase tracking-wider text-[var(--color-text-muted)] leading-tight block mt-0.5">
+                    All Skin Tones
                   </span>
                 </div>
               </div>
 
               {/* Action Buttons */}
-              <div className="pt-2 flex flex-wrap items-center gap-4">
+              <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
                 <Button
                   href="/book?service=royal-bridal-hd-airbrush-makeover"
                   variant="gold"
                   size="lg"
+                  className="w-full sm:w-auto justify-center"
                   icon={<Calendar className="w-4 h-4" />}
                 >
                   Book Bridal Consultation
@@ -290,7 +291,7 @@ export default function BridalPage() {
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 px-6 py-3.5 rounded-md bg-[var(--color-surface)] text-[var(--color-text)] hover:text-[var(--color-primary)] border border-[var(--color-border)] text-sm font-semibold transition-colors"
+                  className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-md bg-[var(--color-surface)] text-[var(--color-text)] hover:text-[var(--color-primary)] border border-[var(--color-border)] text-sm font-semibold transition-colors w-full sm:w-auto"
                 >
                   <MessageSquare className="w-4 h-4 text-emerald-400" />
                   <span>Bridal Concierge WhatsApp</span>

@@ -32,7 +32,7 @@ export function ServiceCategoryFilter({
             value={searchQuery}
             onChange={(e) => onSearchChange(e.target.value)}
             placeholder="Search treatments (e.g. balayage, facial, beard, fade)..."
-            className="w-full bg-[var(--color-surface,#14161b)] text-[var(--color-text)] placeholder-[var(--color-text-muted)] text-sm rounded-[var(--border-radius,8px)] border border-[var(--color-border)] pl-10 pr-9 py-2.5 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)] transition-colors"
+            className="w-full bg-[var(--color-surface,#14161b)] text-[var(--color-text)] placeholder-[var(--color-text-muted)] text-base sm:text-sm rounded-[var(--border-radius,8px)] border border-[var(--color-border)] pl-10 pr-9 py-2.5 focus:outline-none focus:border-[var(--color-primary)] focus:ring-1 focus:ring-[var(--color-primary)] transition-colors"
           />
           {searchQuery && (
             <button
@@ -46,9 +46,9 @@ export function ServiceCategoryFilter({
         </div>
       </div>
 
-      {/* Category Pills */}
+      {/* Category Pills - Smooth horizontal swipe on mobile, wrapped on larger screens */}
       <div
-        className="flex items-center justify-center flex-wrap gap-2 pt-2"
+        className="flex items-center sm:justify-center overflow-x-auto no-scrollbar scroll-smooth gap-2 pt-2 px-2 -mx-2 sm:mx-0 sm:flex-wrap pb-1"
         role="tablist"
         aria-label="Service categories"
       >
@@ -60,7 +60,7 @@ export function ServiceCategoryFilter({
               role="tab"
               aria-selected={isActive}
               onClick={() => onSelectCategory(cat.id)}
-              className={`px-4 py-2 rounded-full text-xs font-semibold tracking-wider transition-all cursor-pointer border ${
+              className={`px-3.5 sm:px-4 py-2 rounded-full text-xs font-semibold tracking-wider transition-all cursor-pointer border whitespace-nowrap shrink-0 ${
                 isActive
                   ? "bg-[var(--color-primary)] text-[var(--color-primary-foreground)] border-[var(--color-primary)] shadow-sm"
                   : "bg-[var(--color-surface,#14161b)] text-[var(--color-text-muted)] hover:text-[var(--color-text)] border-[var(--color-border)] hover:border-[var(--color-border-strong)]"

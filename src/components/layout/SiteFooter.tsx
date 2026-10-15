@@ -178,20 +178,20 @@ export function SiteFooter() {
         </div>
 
         {/* Bottom Section: Legal, GST & Copyright */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[var(--color-text-muted)]">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-[var(--color-text-muted)] text-center sm:text-left">
           <p>
             © {new Date().getFullYear()} {brandConfig.legal.copyrightHolder}. All rights reserved.
             {brandConfig.legal.gstNumber && ` | GSTIN: ${brandConfig.legal.gstNumber}`}
           </p>
 
-          <div className="flex items-center space-x-6">
-            <Link href="/privacy-policy" className="hover:text-[var(--color-primary)] transition-colors">
+          <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+            <Link href="/privacy-policy" className="hover:text-[var(--color-primary)] transition-colors py-1">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="hover:text-[var(--color-primary)] transition-colors">
+            <Link href="/terms" className="hover:text-[var(--color-primary)] transition-colors py-1">
               Terms & Cancellation
             </Link>
-            <Link href="/contact" className="hover:text-[var(--color-primary)] transition-colors">
+            <Link href="/contact" className="hover:text-[var(--color-primary)] transition-colors py-1">
               Concierge Desk
             </Link>
           </div>

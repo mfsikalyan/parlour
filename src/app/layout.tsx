@@ -8,18 +8,17 @@ import { AnnouncementBar } from "@/components/layout/AnnouncementBar";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { WhatsAppWidget } from "@/components/layout/WhatsAppWidget";
+import { MobileBottomBar } from "@/components/layout/MobileBottomBar";
 
 const cinzel = Cinzel({
   variable: "--font-heading-font",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
 const plusJakartaSans = Plus_Jakarta_Sans({
   variable: "--font-body-font",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
   display: "swap",
 });
 
@@ -91,7 +90,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
         />
       </head>
-      <body className="min-h-screen flex flex-col bg-[var(--color-background)] text-[var(--color-text)]">
+      <body className="min-h-screen flex flex-col bg-[var(--color-background)] text-[var(--color-text)] pb-20 lg:pb-0">
         <AnnouncementBar />
         <SiteHeader />
         <main id="main-content" className="flex-1">
@@ -99,6 +98,7 @@ export default function RootLayout({
         </main>
         <SiteFooter />
         <WhatsAppWidget />
+        <MobileBottomBar />
       </body>
     </html>
   );
